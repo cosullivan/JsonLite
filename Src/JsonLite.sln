@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLite", "JsonLite\JsonLite.csproj", "{A3B3A7D9-E1B7-4B1E-84C6-C590AEA50101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLite.Facts", "JsonLite.Facts\JsonLite.Facts.csproj", "{59564E74-E707-4A48-8A23-9C1B503AB966}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3B3A7D9-E1B7-4B1E-84C6-C590AEA50101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B3A7D9-E1B7-4B1E-84C6-C590AEA50101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B3A7D9-E1B7-4B1E-84C6-C590AEA50101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B3A7D9-E1B7-4B1E-84C6-C590AEA50101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59564E74-E707-4A48-8A23-9C1B503AB966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59564E74-E707-4A48-8A23-9C1B503AB966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59564E74-E707-4A48-8A23-9C1B503AB966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59564E74-E707-4A48-8A23-9C1B503AB966}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

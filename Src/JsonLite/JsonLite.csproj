@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3B3A7D9-E1B7-4B1E-84C6-C590AEA50101}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JsonLite</RootNamespace>
+    <AssemblyName>JsonLite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ast\IJsonPrimitive.cs" />
+    <Compile Include="Json.cs" />
+    <Compile Include="Ast\JsonAstException.cs" />
+    <Compile Include="Ast\JsonAstVisitor.cs" />
+    <Compile Include="Ast\JsonBoolean.cs" />
+    <Compile Include="Ast\JsonDecimal.cs" />
+    <Compile Include="Ast\JsonInteger.cs" />
+    <Compile Include="Ast\JsonNull.cs" />
+    <Compile Include="Ast\JsonNumber.cs" />
+    <Compile Include="Ast\JsonAstParser.cs" />
+    <Compile Include="Ast\JsonTextOutputVisitor.cs" />
+    <Compile Include="Ast\JsonValue.cs" />
+    <Compile Include="Ast\JsonArray.cs" />
+    <Compile Include="Ast\JsonObject.cs" />
+    <Compile Include="Ast\JsonMember.cs" />
+    <Compile Include="Ast\JsonString.cs" />
+    <Compile Include="JsonException.cs" />
+    <Compile Include="JsonParser.cs" />
+    <Compile Include="JsonReader.cs" />
+    <Compile Include="JsonTextReader.cs" />
+    <Compile Include="JsonToken.cs" />
+    <Compile Include="JsonTokenEnumerator.cs" />
+    <Compile Include="JsonTokenKind.cs" />
+    <Compile Include="JsonUnexpectedEndException.cs" />
+    <Compile Include="JsonUnexpectedCharacterException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JsonLite.nuspec" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

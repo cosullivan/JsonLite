@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>JsonLite</id>
+        <title>JsonLite</title>
+        <version>1.0.0</version>
+        <authors>Cain O'Sullivan</authors>
+        <projectUrl>https://github.com/cosullivan/JsonLite</projectUrl>
+        <description>A JSON library for parsing JSON.</description>
+    </metadata>
+</package>
