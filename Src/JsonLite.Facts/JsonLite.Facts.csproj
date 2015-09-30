@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonStringifyFacts.cs" />
     <Compile Include="JsonParserFacts.cs" />
     <Compile Include="JsonTextReaderFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

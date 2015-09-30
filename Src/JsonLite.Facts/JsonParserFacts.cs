@@ -72,6 +72,17 @@ namespace JsonLite.Facts
         }
 
         [Fact]
+        public void CanParseObjectWithoutWhitespaceSeparators()
+        {
+            // act
+            var value = CreateValue("{\"a\": 1,\"b\":2,\"c\":3}");
+
+            // assert
+            Assert.IsType<JsonObject>(value);
+            Assert.Equal(3, ((JsonObject)value).Members.Count);
+        }
+
+        [Fact]
         public void CanParseEmptyObject()
         {
             // act
