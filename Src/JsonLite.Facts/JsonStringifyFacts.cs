@@ -1,5 +1,4 @@
-﻿using System.IO;
-using JsonLite.Ast;
+﻿using JsonLite.Ast;
 using Xunit;
 
 namespace JsonLite.Facts

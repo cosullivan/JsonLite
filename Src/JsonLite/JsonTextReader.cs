@@ -256,7 +256,7 @@ namespace JsonLite
                         return DecimalToken(value);
 
                     default:
-                        if (Char.IsWhiteSpace(ch) || ch == ',')
+                        if (IsTokenTerminator(ch))
                         {
                             return new JsonToken(JsonTokenKind.Integer, value.ToString());
                         }
@@ -304,7 +304,7 @@ namespace JsonLite
                         return ExponentToken(ch, value);
                     
                     default:
-                        if (Char.IsWhiteSpace(ch) || ch == ',')
+                        if (IsTokenTerminator(ch))
                         {
                             return new JsonToken(JsonTokenKind.Fractional, value.ToString());
                         }
@@ -362,7 +362,7 @@ namespace JsonLite
                         break;
 
                     default:
-                        if (Char.IsWhiteSpace(ch) || ch == ',')
+                        if (IsTokenTerminator(ch))
                         {
                             return new JsonToken(JsonTokenKind.Fractional, value.ToString());
                         }
@@ -442,14 +442,24 @@ namespace JsonLite
             return true;
         }
 
+        ///// <summary>
+        ///// Returns true if the given character is a hex character.
+        ///// </summary>
+        ///// <param name="ch">The character to test.</param>
+        ///// <returns>true if the given character is a hex character, false if not.</returns>
+        //static bool IsHex(char ch)
+        //{
+        //    return (ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F');
+        //}
+
         /// <summary>
-        /// Returns true if the given character is a hex character.
+        /// Returns a value indicating whether or not the given character can be considered a valid ending for a token.
         /// </summary>
         /// <param name="ch">The character to test.</param>
-        /// <returns>true if the given character is a hex character, false if not.</returns>
-        static bool IsHex(char ch)
+        /// <returns>true if the given character is a valid ending to a token, false if not.</returns>
+        static bool IsTokenTerminator(char ch)
         {
-            return (ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F');
+            return Char.IsWhiteSpace(ch) || ch == ',' || ch == '}';
         }
     }
 }
