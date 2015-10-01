@@ -69,11 +69,11 @@ namespace JsonLite.Ast
         protected abstract T Visit(JsonObject jsonObject);
 
         /// <summary>
-        /// Visit a JSON pair.
+        /// Visit a JSON member.
         /// </summary>
-        /// <param name="jsonPair">The JSON pair to visit.</param>
+        /// <param name="jsonMember">The JSON member to visit.</param>
         /// <returns>The type that was visited.</returns>
-        protected abstract T Visit(JsonMember jsonPair);
+        protected abstract T Visit(JsonMember jsonMember);
 
         /// <summary>
         /// Visit a JSON string.
@@ -134,13 +134,13 @@ namespace JsonLite.Ast
         }
 
         /// <summary>
-        /// Visit a JSON pair.
+        /// Visit a JSON member.
         /// </summary>
-        /// <param name="jsonPair">The JSON pair to visit.</param>
+        /// <param name="jsonMember">The JSON member to visit.</param>
         /// <returns>The type that was visited.</returns>
-        protected override JsonValue Visit(JsonMember jsonPair)
+        protected override JsonValue Visit(JsonMember jsonMember)
         {
-            return Visit(jsonPair.Value);
+            return new JsonMember(jsonMember.Name.Value, Visit(jsonMember.Value));
         }
 
         /// <summary>

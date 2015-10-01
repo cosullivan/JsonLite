@@ -3,7 +3,7 @@
     <metadata>
         <id>Json.Lite</id>
         <title>JsonLite</title>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <authors>Cain O'Sullivan</authors>
         <projectUrl>https://github.com/cosullivan/JsonLite</projectUrl>
         <description>A JSON library for parsing JSON.</description>
