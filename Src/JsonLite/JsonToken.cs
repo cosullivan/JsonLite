@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Globalization;
 
 namespace JsonLite
 {
@@ -45,7 +44,7 @@ namespace JsonLite
         /// <param name="ch">The character to create the token from.</param>
         public JsonToken(JsonTokenKind kind, char ch) : this()
         {
-            Text = ch.ToString(CultureInfo.InvariantCulture);
+            Text = ch.ToString();
             Kind = kind;
         }
 
@@ -58,7 +57,7 @@ namespace JsonLite
         {
             if (Kind == other.Kind)
             {
-                return String.Equals(Text, other.Text, StringComparison.InvariantCultureIgnoreCase);
+                return String.Equals(Text, other.Text, StringComparison.OrdinalIgnoreCase);
             }
 
             return false;

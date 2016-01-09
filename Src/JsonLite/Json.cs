@@ -27,18 +27,5 @@ namespace JsonLite
         {
             return new JsonAstParser(new JsonTextReader(new StreamReader(stream))).CreateAst();
         }
-        
-        /// <summary>
-        /// Create an AST from the JSON contained in the specified file.
-        /// </summary>
-        /// <param name="filePath">The file path to load the JSON from.</param>
-        /// <returns>The Json Value that represents the top level item of the JSON AST.</returns>
-        public static JsonValue CreateAstFromFile(string filePath)
-        {
-            using (var stream = File.OpenRead(filePath))
-            {
-                return CreateAst(stream);
-            }
-        }
     }
 }

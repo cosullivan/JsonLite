@@ -141,7 +141,10 @@ namespace JsonLite.Facts
         [InlineData(@"..\..\sample1.json")]
         public void CanParseFile(string fileName)
         {
-            Json.CreateAstFromFile(fileName);
+            using (var stream = File.OpenRead(fileName))
+            {
+                Json.CreateAst(stream);
+            }
         }
 
         static JsonValue CreateValue(string json)
