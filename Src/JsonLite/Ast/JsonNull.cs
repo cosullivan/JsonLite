@@ -8,6 +8,11 @@ namespace JsonLite.Ast
         public static readonly JsonNull Instance = new JsonNull();
 
         /// <summary>
+        /// Constructor.
+        /// </summary>
+        JsonNull() { }
+
+        /// <summary>
         /// Gets the underlying CLR value.
         /// </summary>
         /// <returns>The CLR value.</returns>

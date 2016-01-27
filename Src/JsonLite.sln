@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLite.Portable-Net45+Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLite.Net45", "JsonLite\JsonLite.Net45.csproj", "{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

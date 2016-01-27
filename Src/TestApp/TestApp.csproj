@@ -4,28 +4,30 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JsonLite</RootNamespace>
-    <AssemblyName>JsonLite</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>TestApp</RootNamespace>
+    <AssemblyName>TestApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\Net45\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\Net45\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -41,38 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ast\IJsonPrimitive.cs" />
-    <Compile Include="Ast\JsonArray.cs" />
-    <Compile Include="Ast\JsonAstException.cs" />
-    <Compile Include="Ast\JsonAstParser.cs" />
-    <Compile Include="Ast\JsonAstVisitor.cs" />
-    <Compile Include="Ast\JsonBoolean.cs" />
-    <Compile Include="Ast\JsonDecimal.cs" />
-    <Compile Include="Ast\JsonInteger.cs" />
-    <Compile Include="Ast\JsonMember.cs" />
-    <Compile Include="Ast\JsonNull.cs" />
-    <Compile Include="Ast\JsonNumber.cs" />
-    <Compile Include="Ast\JsonObject.cs" />
-    <Compile Include="Ast\JsonString.cs" />
-    <Compile Include="Ast\JsonStringifyVisitor.cs" />
-    <Compile Include="Ast\JsonValue.cs" />
-    <Compile Include="Ast\StringBuilderExtensions.cs" />
-    <Compile Include="Json.cs" />
-    <Compile Include="JsonException.cs" />
-    <Compile Include="JsonParser.cs" />
-    <Compile Include="JsonReader.cs" />
-    <Compile Include="JsonTextReader.cs" />
-    <Compile Include="JsonToken.cs" />
-    <Compile Include="JsonTokenEnumerator.cs" />
-    <Compile Include="JsonTokenKind.cs" />
-    <Compile Include="JsonUnexpectedCharacterException.cs" />
-    <Compile Include="JsonUnexpectedEndException.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="JsonLite.nuspec">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JsonLite\JsonLite.Net45.csproj">
+      <Project>{a844db0d-f3e1-4fe4-938e-4f22cc8bef8e}</Project>
+      <Name>JsonLite.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

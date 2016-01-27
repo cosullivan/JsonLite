@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JsonLite.Ast
 {
@@ -15,6 +16,12 @@ namespace JsonLite.Ast
         {
             _values = values;
         }
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="values">The list of values.</param>
+        public JsonArray(params JsonValue[] values) : this(values.ToList()) { }
 
         /// <summary>
         /// Returns an enumerator that iterates through the collection.

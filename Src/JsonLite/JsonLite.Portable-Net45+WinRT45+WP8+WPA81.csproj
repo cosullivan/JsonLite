@@ -55,6 +55,7 @@
     <Compile Include="Ast\JsonString.cs" />
     <Compile Include="Ast\JsonStringifyVisitor.cs" />
     <Compile Include="Ast\JsonValue.cs" />
+    <Compile Include="Ast\StringBuilderExtensions.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="JsonException.cs" />
     <Compile Include="JsonParser.cs" />

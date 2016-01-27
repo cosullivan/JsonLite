@@ -218,7 +218,7 @@ namespace JsonLite.Ast
         {
             ThrowUnexpectedTokenIfNot(JsonToken.Null);
 
-            return new JsonNull();
+            return JsonNull.Instance;
         }
 
         /// <summary>

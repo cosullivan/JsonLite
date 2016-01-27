@@ -5,10 +5,11 @@
         /// <summary>
         /// Output the JSON value as a string.
         /// </summary>
+        /// <param name="prettify">Indicates whether the output should be prettified.</param>
         /// <returns>The JSON value of the node.</returns>
-        public string Stringify()
+        public string Stringify(bool prettify = false)
         {
-            return new JsonStringifyVisitor().Stringify(this);
+            return new JsonStringifyVisitor(prettify).Stringify(this);
         }
     }
 }
