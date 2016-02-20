@@ -1,23 +1,10 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Text;
 
 namespace JsonLite.Ast
 {
-    public class JsonStringifyVisitor : JsonAstVisitor<string>
+    public class JsonStringifyVisitor : JsonAstVisitor<string>, IJsonStringifyVisitor
     {
-        readonly bool _prettify;
-        int _depth = 0;
-        
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        /// <param name="prettify">Indicates whether the output should be prettified.</param>
-        public JsonStringifyVisitor(bool prettify)
-        {
-            _prettify = prettify;
-        }
-
         /// <summary>
         /// Perform the output processing.
         /// </summary>
@@ -35,23 +22,19 @@ namespace JsonLite.Ast
         /// <returns>The type that was visited.</returns>
         protected override string Visit(JsonArray jsonArray)
         {
-            var builder = new StringBuilder().IndentIf(_prettify, _depth).Append("[").NewLineIf(_prettify);
+            var builder = new StringBuilder().Append("[");
 
             for (var i = 0; i < jsonArray.Count; i++)
             {
-                _depth++;
-                
-                builder.IndentIf(_prettify, _depth).Append(Visit(jsonArray[i]));
-
-                _depth--;
+                builder.Append(Visit(jsonArray[i]));
 
                 if (i < jsonArray.Count - 1)
                 {
-                    builder.Append(",").NewLineIf(_prettify).IndentIf(_prettify, _depth);
+                    builder.Append(",");
                 }
             }
 
-            builder.NewLineIf(_prettify).IndentIf(_prettify, _depth).Append("]");
+            builder.Append("]");
 
             return builder.ToString();
         }
@@ -63,23 +46,19 @@ namespace JsonLite.Ast
         /// <returns>The type that was visited.</returns>
         protected override string Visit(JsonObject jsonObject)
         {
-            var builder = new StringBuilder().IndentIf(_prettify, _depth).Append("{").NewLineIf(_prettify);
+            var builder = new StringBuilder().Append("{");
 
             for (var i = 0; i < jsonObject.Members.Count; i++)
             {
-                _depth++;
-
-                builder.IndentIf(_prettify, _depth).Append(Visit(jsonObject.Members[i]));
-
-                _depth--;
+                builder.Append(Visit(jsonObject.Members[i]));
 
                 if (i < jsonObject.Members.Count - 1)
                 {
-                    builder.Append(",").NewLineIf(_prettify).IndentIf(_prettify, _depth);
+                    builder.Append(",");
                 }
             }
 
-            builder.NewLineIf(_prettify).IndentIf(_prettify, _depth).Append("}");
+            builder.Append("}");
 
             return builder.ToString();
         }
