@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Json.Lite</id>
-        <title>JsonLite</title>
-        <version>1.1.4</version>
+        <title>Json.Lite</title>
+        <version>1.1.8</version>
         <authors>Cain O'Sullivan</authors>
         <projectUrl>https://github.com/cosullivan/JsonLite</projectUrl>
-        <description>A JSON library for parsing JSON.</description>
+        <description>A JSON library for parsing JSON into an Abstract Syntax Tree.</description>
     </metadata>
     <files>
         <file src="bin\Release\Net45\JsonLite.dll" target="lib\Net45" />

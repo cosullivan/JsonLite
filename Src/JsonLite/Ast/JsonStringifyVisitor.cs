@@ -80,7 +80,16 @@ namespace JsonLite.Ast
         /// <returns>The type that was visited.</returns>
         protected override string Visit(JsonString jsonString)
         {
-            return $"\"{jsonString.Value}\"";
+            var text = jsonString.Value
+                .Replace("\\", "\\\\")
+                .Replace("\b", "\\b")
+                .Replace("\f", "\\f")
+                .Replace("\n", "\\n")
+                .Replace("\r", "\\r")
+                .Replace("\t", "\\t")
+                .Replace("\"", "\\\"");
+
+            return $"\"{text}\"";
         }
 
         /// <summary>

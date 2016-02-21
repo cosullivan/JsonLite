@@ -142,10 +142,6 @@ namespace JsonLite
             {
                 switch (ch)
                 {
-                    case '"':
-                        Take();
-                        return new JsonToken(JsonTokenKind.String, text.ToString());
-
                     case '\\':
                         Take();
                         Peek(out ch);
@@ -198,6 +194,10 @@ namespace JsonLite
                                 throw new JsonException("Invalid escape character '{0}'.", ch);
                         }
                         break;
+
+                    case '"':
+                        Take();
+                        return new JsonToken(JsonTokenKind.String, text.ToString());
 
                     default:
                         Take();

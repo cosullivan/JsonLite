@@ -18,6 +18,17 @@ namespace JsonLite.Facts
         }
 
         [Fact]
+        public void CanParseQuotedString()
+        {
+            // act
+            var value = CreateValue("\"hello \\\"world\\\"!\"");
+
+            // assert
+            Assert.IsType<JsonString>(value);
+            Assert.Equal("hello \"world\"!", ((JsonString)value).Value);
+        }
+
+        [Fact]
         public void CanParseInteger()
         {
             // act
