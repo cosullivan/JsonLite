@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="sample.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JsonLite\JsonLite.Net45.csproj">

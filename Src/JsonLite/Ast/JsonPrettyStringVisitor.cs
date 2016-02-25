@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace JsonLite.Ast
 {
@@ -14,9 +13,7 @@ namespace JsonLite.Ast
         /// <returns>The type that was visited.</returns>
         protected override string Visit(JsonArray jsonArray)
         {
-            //_depth += 2;
-
-            var builder = new StringBuilder().Append("["); //.NewLine().Indent(_depth);
+            var builder = new StringBuilder().Append("[");
 
             for (var i = 0; i < jsonArray.Count; i++)
             {
@@ -24,13 +21,11 @@ namespace JsonLite.Ast
 
                 if (i < jsonArray.Count - 1)
                 {
-                    builder.Append(", ").NewLine().Indent(_depth);
+                    builder.Append(", ");
                 }
             }
 
-            //_depth -= 2;
-
-            builder.Append("]"); //.Indent(_depth);
+            builder.Append("]");
 
             return builder.ToString();
         }
@@ -70,7 +65,7 @@ namespace JsonLite.Ast
         /// <returns>The type that was visited.</returns>
         protected override string Visit(JsonMember jsonPair)
         {
-            return $"{Visit(jsonPair.Name)} : {Visit(jsonPair.Value)}";
+            return $"{Visit(jsonPair.Name)}: {Visit(jsonPair.Value)}";
         }
     }
 }
