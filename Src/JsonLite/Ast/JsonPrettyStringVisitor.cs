@@ -43,7 +43,7 @@ namespace JsonLite.Ast
 
             for (var i = 0; i < jsonObject.Members.Count; i++)
             {
-                builder.Append(Visit(jsonObject.Members[i]));
+                builder.Append(VisitMember(jsonObject.Members[i]));
 
                 if (i < jsonObject.Members.Count - 1)
                 {
@@ -59,13 +59,13 @@ namespace JsonLite.Ast
         }
 
         /// <summary>
-        /// Visit a JSON pair.
+        /// Visit a JSON member.
         /// </summary>
-        /// <param name="jsonPair">The JSON pair to visit.</param>
+        /// <param name="jsonMember">The JSON member to visit.</param>
         /// <returns>The type that was visited.</returns>
-        protected override string Visit(JsonMember jsonPair)
+        protected override string VisitMember(JsonMember jsonMember)
         {
-            return $"{Visit(jsonPair.Name)}: {Visit(jsonPair.Value)}";
+            return $"\"{jsonMember.Name}\":{Visit(jsonMember.Value)}";
         }
     }
 }

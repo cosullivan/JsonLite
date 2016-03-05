@@ -29,7 +29,7 @@ namespace JsonLite.Ast
         /// <returns>The JSON value for the member with the given name.</returns>
         public JsonValue this[string name]
         {
-            get { return _members.SingleOrDefault(m => m.Name.Value == name)?.Value; }
+            get { return _members.SingleOrDefault(m => m.Name == name)?.Value; }
         }
 
         /// <summary>

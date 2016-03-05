@@ -113,7 +113,7 @@ namespace JsonLite.Facts
             // assert
             Assert.IsType<JsonObject>(value);
             Assert.Equal(1, ((JsonObject)value).Members.Count);
-            Assert.Equal("a", ((JsonObject)value).Members[0].Name.Value);
+            Assert.Equal("a", ((JsonObject)value).Members[0].Name);
             Assert.Equal(123, ((JsonInteger)((JsonObject)value).Members[0].Value).Value);
         }
 

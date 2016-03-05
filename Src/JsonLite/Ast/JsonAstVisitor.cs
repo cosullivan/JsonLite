@@ -21,11 +21,6 @@ namespace JsonLite.Ast
                 return Visit((JsonObject)jsonValue);
             }
 
-            if (jsonValue is JsonMember)
-            {
-                return Visit((JsonMember)jsonValue);
-            }
-
             if (jsonValue is JsonString)
             {
                 return Visit((JsonString)jsonValue);
@@ -67,13 +62,6 @@ namespace JsonLite.Ast
         /// <param name="jsonObject">The JSON object to visit.</param>
         /// <returns>The type that was visited.</returns>
         protected abstract T Visit(JsonObject jsonObject);
-
-        /// <summary>
-        /// Visit a JSON member.
-        /// </summary>
-        /// <param name="jsonMember">The JSON member to visit.</param>
-        /// <returns>The type that was visited.</returns>
-        protected abstract T Visit(JsonMember jsonMember);
 
         /// <summary>
         /// Visit a JSON string.
@@ -130,17 +118,9 @@ namespace JsonLite.Ast
         /// <returns>The type that was visited.</returns>
         protected override JsonValue Visit(JsonObject jsonObject)
         {
-            return new JsonObject(jsonObject.Members.Select(Visit).OfType<JsonMember>().ToList());
-        }
+            var members = jsonObject.Members.Select(member => new JsonMember(member.Name, Visit(member.Value)));
 
-        /// <summary>
-        /// Visit a JSON member.
-        /// </summary>
-        /// <param name="jsonMember">The JSON member to visit.</param>
-        /// <returns>The type that was visited.</returns>
-        protected override JsonValue Visit(JsonMember jsonMember)
-        {
-            return new JsonMember(jsonMember.Name.Value, Visit(jsonMember.Value));
+            return new JsonObject(members.ToList());
         }
 
         /// <summary>

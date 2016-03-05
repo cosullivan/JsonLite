@@ -155,7 +155,7 @@ namespace JsonLite.Ast
         /// <returns>The name/value pair that was made from the current position.</returns>
         JsonMember MakePair()
         {
-            var name = new JsonString(Enumerator.Take().Text);
+            var name = Enumerator.Take().Text;
 
             ThrowUnexpectedTokenIfNot(JsonToken.Colon);
 
