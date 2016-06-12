@@ -36,6 +36,9 @@ namespace TestApp
                         new JsonMember("SimpleArray", array2))));
 
             Console.WriteLine(json.Stringify(true));
+
+            var jsonInteger = new JsonInteger(123);
+            Console.WriteLine(((JsonDecimal)jsonInteger).Value);
         }
     }
 }
