@@ -119,7 +119,7 @@ namespace JsonLite.Ast
         /// <returns>The type that was visited.</returns>
         protected override string Visit(JsonBoolean jsonBoolean)
         {
-            return jsonBoolean.Value.ToString();
+            return jsonBoolean.Value.ToString().ToLower();
         }
 
         /// <summary>
