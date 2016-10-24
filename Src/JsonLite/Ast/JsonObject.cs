@@ -5,15 +5,13 @@ namespace JsonLite.Ast
 {
     public sealed class JsonObject : JsonValue
     {
-        readonly IReadOnlyList<JsonMember> _members;
-
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="members">The list of members.</param>
         public JsonObject(IReadOnlyList<JsonMember> members)
         {
-            _members = members;
+            Members = members;
         }
 
         /// <summary>
@@ -29,15 +27,12 @@ namespace JsonLite.Ast
         /// <returns>The JSON value for the member with the given name.</returns>
         public JsonValue this[string name]
         {
-            get { return _members.SingleOrDefault(m => m.Name == name)?.Value; }
+            get { return Members.SingleOrDefault(m => m.Name == name)?.Value; }
         }
 
         /// <summary>
         /// Gets the list of JSON members.
         /// </summary>
-        public IReadOnlyList<JsonMember> Members
-        {
-            get { return _members; }
-        }
+        public IReadOnlyList<JsonMember> Members { get; }
     }
 }

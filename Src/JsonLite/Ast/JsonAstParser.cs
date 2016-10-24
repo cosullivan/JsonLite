@@ -175,12 +175,12 @@ namespace JsonLite.Ast
         /// Make a integer value from the current position.
         /// </summary>
         /// <returns>The integer value.</returns>
-        JsonInteger MakeInteger()
+        JsonNumber MakeInteger()
         {
             long value;
             if (Int64.TryParse(Enumerator.Take().Text, out value))
             {
-                return new JsonInteger(value);
+                return new JsonNumber(value);
             }
 
             throw new JsonAstException("Unexpected long format.");
@@ -190,12 +190,12 @@ namespace JsonLite.Ast
         /// Make a fractional number from the current position.
         /// </summary>
         /// <returns>The fractional number.</returns>
-        JsonDecimal MakeDecimal()
+        JsonNumber MakeDecimal()
         {
             decimal value;
             if (Decimal.TryParse(Enumerator.Take().Text, NumberStyles.Float | NumberStyles.AllowExponent, null, out value))
             {
-                return new JsonDecimal(value);
+                return new JsonNumber(value);
             }
 
             throw new JsonAstException("Unexpected decimal format.");

@@ -26,14 +26,9 @@ namespace JsonLite.Ast
                 return Visit((JsonString)jsonValue);
             }
 
-            if (jsonValue is JsonInteger)
+            if (jsonValue is JsonNumber)
             {
-                return Visit((JsonInteger)jsonValue);
-            }
-
-            if (jsonValue is JsonDecimal)
-            {
-                return Visit((JsonDecimal)jsonValue);
+                return Visit((JsonNumber)jsonValue);
             }
 
             if (jsonValue is JsonBoolean)
@@ -71,18 +66,11 @@ namespace JsonLite.Ast
         protected abstract T Visit(JsonString jsonString);
 
         /// <summary>
-        /// Visit a JSON integer.
+        /// Visit a JSON number.
         /// </summary>
-        /// <param name="jsonInteger">The JSON integer to visit.</param>
+        /// <param name="jsonNumber">The JSON number to visit.</param>
         /// <returns>The type that was visited.</returns>
-        protected abstract T Visit(JsonInteger jsonInteger);
-
-        /// <summary>
-        /// Visit a JSON decimal.
-        /// </summary>
-        /// <param name="jsonDecimal">The JSON decimal to visit.</param>
-        /// <returns>The type that was visited.</returns>
-        protected abstract T Visit(JsonDecimal jsonDecimal);
+        protected abstract T Visit(JsonNumber jsonNumber);
 
         /// <summary>
         /// Visit a JSON boolean.
@@ -134,25 +122,15 @@ namespace JsonLite.Ast
         }
 
         /// <summary>
-        /// Visit a JSON integer.
+        /// Visit a JSON number.
         /// </summary>
-        /// <param name="jsonInteger">The JSON integer to visit.</param>
+        /// <param name="jsonNumber">The JSON number to visit.</param>
         /// <returns>The type that was visited.</returns>
-        protected override JsonValue Visit(JsonInteger jsonInteger)
+        protected override JsonValue Visit(JsonNumber jsonNumber)
         {
-            return jsonInteger;
+            return jsonNumber;
         }
-
-        /// <summary>
-        /// Visit a JSON decimal.
-        /// </summary>
-        /// <param name="jsonDecimal">The JSON decimal to visit.</param>
-        /// <returns>The type that was visited.</returns>
-        protected override JsonValue Visit(JsonDecimal jsonDecimal)
-        {
-            return jsonDecimal;
-        }
-
+        
         /// <summary>
         /// Visit a JSON boolean.
         /// </summary>

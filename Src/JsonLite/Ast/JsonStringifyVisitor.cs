@@ -93,23 +93,13 @@ namespace JsonLite.Ast
         }
 
         /// <summary>
-        /// Visit a JSON integer.
+        /// Visit a JSON number.
         /// </summary>
-        /// <param name="jsonInteger">The JSON integer to visit.</param>
+        /// <param name="jsonNumber">The JSON number to visit.</param>
         /// <returns>The type that was visited.</returns>
-        protected override string Visit(JsonInteger jsonInteger)
+        protected override string Visit(JsonNumber jsonNumber)
         {
-            return jsonInteger.Value.ToString();
-        }
-
-        /// <summary>
-        /// Visit a JSON decimal.
-        /// </summary>
-        /// <param name="jsonDecimal">The JSON decimal to visit.</param>
-        /// <returns>The type that was visited.</returns>
-        protected override string Visit(JsonDecimal jsonDecimal)
-        {
-            return jsonDecimal.Value.ToString(CultureInfo.InvariantCulture);
+            return jsonNumber.Value.ToString(CultureInfo.InvariantCulture);
         }
 
         /// <summary>

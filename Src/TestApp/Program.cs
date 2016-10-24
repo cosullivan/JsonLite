@@ -9,36 +9,33 @@ namespace TestApp
         {
             //var json = new JsonArray(
             //    new JsonObject(
-            //        new JsonMember("A", new JsonInteger(1)),
-            //        new JsonMember("B", new JsonInteger(2)),
-            //        new JsonMember("C", new JsonArray(new JsonInteger(1), new JsonInteger(2)))),
+            //        new JsonMember("A", new JsonNumber(1)),
+            //        new JsonMember("B", new JsonNumber(2)),
+            //        new JsonMember("C", new JsonArray(new JsonNumber(1), new JsonNumber(2)))),
             //    new JsonObject(
-            //        new JsonMember("D", new JsonInteger(3)),
-            //        new JsonMember("E", new JsonInteger(4))));
+            //        new JsonMember("D", new JsonNumber(3)),
+            //        new JsonMember("E", new JsonNumber(4))));
 
             var nested = new JsonObject(
-                new JsonMember("A", new JsonInteger(3)),
-                new JsonMember("A", new JsonInteger(3)),
-                new JsonMember("A", new JsonInteger(3)));
+                new JsonMember("A", new JsonNumber(3)),
+                new JsonMember("A", new JsonNumber(3.01m)),
+                new JsonMember("A", new JsonNumber(3)));
 
             var array = new JsonArray(nested, nested, nested);
-            var array2 = new JsonArray(new JsonInteger(3), new JsonInteger(2), new JsonInteger(1));
+            var array2 = new JsonArray(new JsonNumber(3), new JsonNumber(2), new JsonNumber(1));
 
             var json = new JsonObject(
-                new JsonMember("A", new JsonInteger(1)),
-                new JsonMember("B", new JsonInteger(2)),
-                new JsonMember("C", 
+                new JsonMember("A", new JsonNumber(1)),
+                new JsonMember("B", new JsonNumber(2)),
+                new JsonMember("C",
                     new JsonObject(
-                        new JsonMember("A", new JsonInteger(3)),
-                        new JsonMember("A", new JsonInteger(3)),
-                        new JsonMember("A", new JsonInteger(3)),
-                        new JsonMember("SDKLJ", array),
+                        new JsonMember("A", new JsonNumber(3)),
+                        new JsonMember("A", new JsonNumber(3)),
+                        new JsonMember("A", new JsonNumber(3)),
+                        new JsonMember("ComplexArray", array),
                         new JsonMember("SimpleArray", array2))));
 
             Console.WriteLine(json.Stringify(true));
-
-            var jsonInteger = new JsonInteger(123);
-            Console.WriteLine(((JsonDecimal)jsonInteger).Value);
         }
     }
 }

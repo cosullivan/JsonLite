@@ -35,8 +35,8 @@ namespace JsonLite.Facts
             var value = CreateValue("123");
 
             // assert
-            Assert.IsType<JsonInteger>(value);
-            Assert.Equal(123, ((JsonInteger)value).Value);
+            Assert.IsType<JsonNumber>(value);
+            Assert.Equal(123, ((JsonNumber)value).Value);
         }
 
         [Fact]
@@ -46,8 +46,8 @@ namespace JsonLite.Facts
             var value = CreateValue("123.01");
 
             // assert
-            Assert.IsType<JsonDecimal>(value);
-            Assert.Equal(123.01m, ((JsonDecimal)value).Value);
+            Assert.IsType<JsonNumber>(value);
+            Assert.Equal(123.01m, ((JsonNumber)value).Value);
         }
 
         [Fact]
@@ -114,7 +114,7 @@ namespace JsonLite.Facts
             Assert.IsType<JsonObject>(value);
             Assert.Equal(1, ((JsonObject)value).Members.Count);
             Assert.Equal("a", ((JsonObject)value).Members[0].Name);
-            Assert.Equal(123, ((JsonInteger)((JsonObject)value).Members[0].Value).Value);
+            Assert.Equal(123, ((JsonNumber)((JsonObject)value).Members[0].Value).Value);
         }
 
         [Fact]

@@ -47,8 +47,6 @@
     <Compile Include="Ast\JsonAstParser.cs" />
     <Compile Include="Ast\JsonAstVisitor.cs" />
     <Compile Include="Ast\JsonBoolean.cs" />
-    <Compile Include="Ast\JsonDecimal.cs" />
-    <Compile Include="Ast\JsonInteger.cs" />
     <Compile Include="Ast\JsonMember.cs" />
     <Compile Include="Ast\JsonNull.cs" />
     <Compile Include="Ast\JsonNumber.cs" />

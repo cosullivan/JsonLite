@@ -10,8 +10,8 @@ namespace JsonLite.Facts
         {
             // arrange
             var value1 = new JsonObject(
-                new JsonMember("a", new JsonInteger(1)),
-                new JsonMember("b", new JsonInteger(2)),
+                new JsonMember("a", new JsonNumber(1)),
+                new JsonMember("b", new JsonNumber(2)),
                 new JsonMember("c", new JsonString("\"Hello World\"")));
 
             // act
