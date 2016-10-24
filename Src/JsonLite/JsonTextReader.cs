@@ -459,7 +459,7 @@ namespace JsonLite
         /// <returns>true if the given character is a valid ending to a token, false if not.</returns>
         static bool IsTokenTerminator(char ch)
         {
-            return Char.IsWhiteSpace(ch) || ch == ',' || ch == '}';
+            return Char.IsWhiteSpace(ch) || ch == ',' || ch == '}' || ch == ']';
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using JsonLite;
 using JsonLite.Ast;
 
 namespace TestApp
@@ -24,7 +25,7 @@ namespace TestApp
             var array = new JsonArray(nested, nested, nested);
             var array2 = new JsonArray(new JsonNumber(3), new JsonNumber(2), new JsonNumber(1));
 
-            var json = new JsonObject(
+            JsonValue json = new JsonObject(
                 new JsonMember("A", new JsonNumber(1)),
                 new JsonMember("B", new JsonNumber(2)),
                 new JsonMember("C",
@@ -35,7 +36,9 @@ namespace TestApp
                         new JsonMember("ComplexArray", array),
                         new JsonMember("SimpleArray", array2))));
 
-            Console.WriteLine(json.Stringify(true));
+            //Console.WriteLine(json.Stringify(true));
+
+            json = Json.CreateAst(json.Stringify(true));
         }
     }
 }

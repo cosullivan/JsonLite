@@ -121,7 +121,18 @@ namespace JsonLite.Facts
         public void CanParseArray()
         {
             // act
-            var value = CreateValue("[ 1, 2, 3, 4, 5 ]");
+            var value = CreateValue("[1,2.5,3.8,4,5.8]");
+
+            // assert
+            Assert.IsType<JsonArray>(value);
+            Assert.Equal(5, ((JsonArray)value).Count);
+        }
+
+        [Fact]
+        public void CanParseArrayWithWhitspace()
+        {
+            // act
+            var value = CreateValue("[ 1,   2.5, 3.8, 4,     5.8   ]");
 
             // assert
             Assert.IsType<JsonArray>(value);
