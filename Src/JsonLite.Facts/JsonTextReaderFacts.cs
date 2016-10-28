@@ -18,19 +18,20 @@ namespace JsonLite.Facts
             Assert.Equal(new JsonToken(JsonTokenKind.String, "hello"), token);
         }
 
-        //[Theory]
-        //[InlineData("\\u0123")]
-        //public void CanReadUnicodeString(string unicode)
-        //{
-        //    // arrange
-        //    var reader = new JsonTextReader(new StringReader($"\"{unicode}\""));
+        [Theory]
+        [InlineData("\\u0123", "\u0123")]
+        [InlineData("\\u0460\\u849c\\u8089", "\u0460\u849c\u8089")]
+        public void CanReadUnicodeString(string escaped, string unicode)
+        {
+            // arrange
+            var reader = new JsonTextReader(new StringReader($"\"{escaped}\""));
 
-        //    // act
-        //    var token = reader.NextToken();
+            // act
+            var token = reader.NextToken();
 
-        //    // assert
-        //    //Assert.Equal(new JsonToken(JsonTokenKind.String, unicode), token);
-        //}
+            // assert
+            Assert.Equal(new JsonToken(JsonTokenKind.String, unicode), token);
+        }
 
         [Fact]
         public void CanReadColon()

@@ -136,6 +136,7 @@ namespace JsonLite
         JsonToken StringToken()
         {
             var text = new StringBuilder();
+            var unicode = new char[4];
 
             char ch;
             while (Peek(out ch))
@@ -188,7 +189,16 @@ namespace JsonLite
                                 break;
 
                             case 'u':
-                                throw new NotSupportedException("Unicode characters are not currently supported.");
+                                Take();
+                                for (var i = 0; i < 4; i++)
+                                {
+                                    Peek(out ch);
+                                    Take();
+
+                                    unicode[i] = ch;
+                                }
+                                text.Append((char)UnicodeToInt(unicode));
+                                break;
 
                             default:
                                 throw new JsonException("Invalid escape character '{0}'.", ch);
@@ -207,6 +217,45 @@ namespace JsonLite
             }
 
             throw new JsonUnexpectedEndException(_position);
+        }
+
+        /// <summary>
+        /// Converts the given unicode character array into it's integer representation.
+        /// </summary>
+        /// <param name="unicode">The unicode character array to convert.</param>
+        /// <returns>The integer value that represents the 4 byte unicode array.</returns>
+        static int UnicodeToInt(char[] unicode)
+        {
+            return 
+                HexCharToInt(unicode[0]) << 12 | 
+                HexCharToInt(unicode[1]) << 8 | 
+                HexCharToInt(unicode[2]) << 4 | 
+                HexCharToInt(unicode[3]);
+        }
+
+        /// <summary>
+        /// Convert a hex character to its integer value.
+        /// </summary>
+        /// <param name="ch">The hex character to convert.</param>
+        /// <returns>The integer value that represents the hex character.</returns>
+        static int HexCharToInt(char ch)
+        {
+            if (ch <= 57 && ch >= 48)
+            {
+                return ch - 48;
+            }
+
+            if (ch <= 70 && ch >= 65)
+            {
+                return ch - 55;
+            }
+
+            if (ch <= 102 && ch >= 97)
+            {
+                return ch - 87;
+            }
+
+            throw new JsonException("Invalid hex character '{0}'.", ch);
         }
 
         /// <summary>

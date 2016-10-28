@@ -1,4 +1,5 @@
-﻿using JsonLite.Ast;
+﻿using System;
+using JsonLite.Ast;
 using Xunit;
 
 namespace JsonLite.Facts
@@ -20,6 +21,21 @@ namespace JsonLite.Facts
             // assert
             Assert.IsType<JsonObject>(value2);
             Assert.Equal(3, ((JsonObject)value2).Members.Count);
+        }
+
+        [Theory]
+        [InlineData("\"\\u0123\"", "\u0123")]
+        [InlineData("\"\\u0460\\u849c\\u8089\"", "\u0460\u849c\u8089")]
+        public void CanStringifyUnicode(string escaped, string unicode)
+        {
+            // arrange
+            var token = new JsonString(unicode);
+
+            // act
+            var output = token.Stringify();
+
+            // assert
+            Assert.Equal(escaped, output);
         }
     }
 }

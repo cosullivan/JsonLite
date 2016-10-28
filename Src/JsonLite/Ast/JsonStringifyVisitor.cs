@@ -80,16 +80,71 @@ namespace JsonLite.Ast
         /// <returns>The type that was visited.</returns>
         protected override string Visit(JsonString jsonString)
         {
-            var text = jsonString.Value
-                .Replace("\\", "\\\\")
-                .Replace("\b", "\\b")
-                .Replace("\f", "\\f")
-                .Replace("\n", "\\n")
-                .Replace("\r", "\\r")
-                .Replace("\t", "\\t")
-                .Replace("\"", "\\\"");
+            var text = new StringBuilder(@"""");
 
-            return $"\"{text}\"";
+            for (var i = 0; i < jsonString.Value.Length; i++)
+            {
+                var ch = jsonString.Value[i];
+
+                switch (ch)
+                {
+                    case '\\':
+                        text.Append(@"\\");
+                        break;
+
+                    case '\b':
+                        text.Append(@"\b");
+                        break;
+
+                    case '\f':
+                        text.Append(@"\f");
+                        break;
+
+                    case '\n':
+                        text.Append(@"\n");
+                        break;
+
+                    case '\r':
+                        text.Append(@"\r");
+                        break;
+
+                    case '\t':
+                        text.Append(@"\\t");
+                        break;
+
+                    case '\"':
+                        text.Append(@"\""");
+                        break;
+
+                    case '\u0085':
+                        text.Append(@"\u0085");
+                        break;
+
+                    case '\u2028':
+                        text.Append(@"\u2028");
+                        break;
+
+                    case '\u2029':
+                        text.Append(@"\u2029");
+                        break;
+
+                    default:
+                        if (ch > 127)
+                        {
+                            text.Append(@"\u");
+                            text.Append(((int)ch).ToString("x4"));
+                            break;
+                        }
+
+                        text.Append(ch);
+                        break;
+
+                }
+            }
+
+            text.Append(@"""");
+
+            return text.ToString();
         }
 
         /// <summary>

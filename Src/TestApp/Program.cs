@@ -26,7 +26,7 @@ namespace TestApp
             var array2 = new JsonArray(new JsonNumber(3), new JsonNumber(2), new JsonNumber(1));
 
             JsonValue json = new JsonObject(
-                new JsonMember("A", new JsonNumber(1)),
+                new JsonMember("A", new JsonString("\u0460\u849c\u8089")),
                 new JsonMember("B", new JsonNumber(2)),
                 new JsonMember("C",
                     new JsonObject(
@@ -36,9 +36,10 @@ namespace TestApp
                         new JsonMember("ComplexArray", array),
                         new JsonMember("SimpleArray", array2))));
 
-            //Console.WriteLine(json.Stringify(true));
+            Console.WriteLine(json.Stringify(true));
 
             json = Json.CreateAst(json.Stringify(true));
+            Console.WriteLine(json.Stringify(true));
         }
     }
 }
