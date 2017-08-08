@@ -1,16 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLite.Facts", "JsonLite.Facts\JsonLite.Facts.csproj", "{59564E74-E707-4A48-8A23-9C1B503AB966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonLite", "JsonLite\JsonLite.csproj", "{9FB0A9A6-5A10-4BE0-976D-2F506EC23FFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLite.Portable-Net45+WinRT45+WP8+WPA81", "JsonLite\JsonLite.Portable-Net45+WinRT45+WP8+WPA81.csproj", "{676B698F-3774-406A-9019-DFC04805C30F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E} = {A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLite.Net45", "JsonLite\JsonLite.Net45.csproj", "{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLite.Facts", "JsonLite.Facts\JsonLite.Facts.csproj", "{3BAAEE90-E127-4B63-9AA5-9C984A351C37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}"
 EndProject
@@ -20,18 +15,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{59564E74-E707-4A48-8A23-9C1B503AB966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59564E74-E707-4A48-8A23-9C1B503AB966}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59564E74-E707-4A48-8A23-9C1B503AB966}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59564E74-E707-4A48-8A23-9C1B503AB966}.Release|Any CPU.Build.0 = Release|Any CPU
-		{676B698F-3774-406A-9019-DFC04805C30F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{676B698F-3774-406A-9019-DFC04805C30F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{676B698F-3774-406A-9019-DFC04805C30F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{676B698F-3774-406A-9019-DFC04805C30F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A844DB0D-F3E1-4FE4-938E-4F22CC8BEF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB0A9A6-5A10-4BE0-976D-2F506EC23FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB0A9A6-5A10-4BE0-976D-2F506EC23FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB0A9A6-5A10-4BE0-976D-2F506EC23FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB0A9A6-5A10-4BE0-976D-2F506EC23FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BAAEE90-E127-4B63-9AA5-9C984A351C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BAAEE90-E127-4B63-9AA5-9C984A351C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BAAEE90-E127-4B63-9AA5-9C984A351C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BAAEE90-E127-4B63-9AA5-9C984A351C37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D3CDC4C-1CCC-4004-A99D-16A7F622970D}.Release|Any CPU.ActiveCfg = Release|Any CPU

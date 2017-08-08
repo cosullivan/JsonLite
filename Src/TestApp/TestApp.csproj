@@ -51,9 +51,9 @@
     <None Include="sample.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JsonLite\JsonLite.Net45.csproj">
-      <Project>{a844db0d-f3e1-4fe4-938e-4f22cc8bef8e}</Project>
-      <Name>JsonLite.Net45</Name>
+    <ProjectReference Include="..\JsonLite\JsonLite.csproj">
+      <Project>{9fb0a9a6-5a10-4be0-976d-2f506ec23ffd}</Project>
+      <Name>JsonLite</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

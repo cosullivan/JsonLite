@@ -88,9 +88,6 @@
         /// <summary>
         /// Gets the enumerator.
         /// </summary>
-        protected JsonTokenEnumerator Enumerator
-        {
-            get { return _enumerator; }
-        }
+        protected JsonTokenEnumerator Enumerator => _enumerator;
     }
 }

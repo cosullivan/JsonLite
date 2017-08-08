@@ -177,8 +177,7 @@ namespace JsonLite.Ast
         /// <returns>The integer value.</returns>
         JsonNumber MakeInteger()
         {
-            long value;
-            if (Int64.TryParse(Enumerator.Take().Text, out value))
+            if (Int64.TryParse(Enumerator.Take().Text, out long value))
             {
                 return new JsonNumber(value);
             }
@@ -192,8 +191,7 @@ namespace JsonLite.Ast
         /// <returns>The fractional number.</returns>
         JsonNumber MakeDecimal()
         {
-            decimal value;
-            if (Decimal.TryParse(Enumerator.Take().Text, NumberStyles.Float | NumberStyles.AllowExponent, null, out value))
+            if (Decimal.TryParse(Enumerator.Take().Text, NumberStyles.Float | NumberStyles.AllowExponent, null, out decimal value))
             {
                 return new JsonNumber(value);
             }

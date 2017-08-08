@@ -46,18 +46,12 @@ namespace JsonLite.Ast
         /// </summary>
         /// <param name="index">The zero-based index of the element to get. </param>
         /// <returns>The element at the specified index in the read-only list.</returns>
-        public JsonValue this[int index]
-        {
-            get { return _values[index]; }
-        }
+        public JsonValue this[int index] => _values[index];
 
         /// <summary>
         /// Gets the number of elements in the collection.
         /// </summary>
         /// <returns>The number of elements in the collection.</returns>
-        public int Count
-        {
-            get { return _values.Count; }
-        }
+        public int Count => _values.Count;
     }
 }

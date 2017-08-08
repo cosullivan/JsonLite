@@ -491,16 +491,6 @@ namespace JsonLite
             return true;
         }
 
-        ///// <summary>
-        ///// Returns true if the given character is a hex character.
-        ///// </summary>
-        ///// <param name="ch">The character to test.</param>
-        ///// <returns>true if the given character is a hex character, false if not.</returns>
-        //static bool IsHex(char ch)
-        //{
-        //    return (ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F');
-        //}
-
         /// <summary>
         /// Returns a value indicating whether or not the given character can be considered a valid ending for a token.
         /// </summary>
