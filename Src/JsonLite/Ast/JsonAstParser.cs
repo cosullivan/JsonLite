@@ -191,7 +191,7 @@ namespace JsonLite.Ast
         /// <returns>The fractional number.</returns>
         JsonNumber MakeDecimal()
         {
-            if (Decimal.TryParse(Enumerator.Take().Text, NumberStyles.Float | NumberStyles.AllowExponent, null, out decimal value))
+            if (Decimal.TryParse(Enumerator.Take().Text, NumberStyles.Float | NumberStyles.AllowExponent, CultureInfo.InvariantCulture, out decimal value))
             {
                 return new JsonNumber(value);
             }
